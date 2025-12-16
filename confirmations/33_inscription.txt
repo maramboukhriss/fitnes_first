@@ -1,0 +1,15 @@
+=== CONFIRMATION D'INSCRIPTION ===
+
+Date: Dec 12 2025
+Heure: 12:31:37
+
+DESTINATAIRE:
+  mourad boukhriss
+  Email: k@gmail.com
+  Téléphone: 3456789
+
+DÉTAILS DE L'INSCRIPTION:
+  ID Membre: 33
+  Statut: CONFIRMÉ
+
+En production, cet email serait envoyé à l'adresse ci-dessus.

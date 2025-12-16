@@ -1,0 +1,2 @@
+Membre:22 | Objectifs:1,1,1,1,1 | Disponibilite:Matin | Jours:1,1,1,1,0
+Membre:22 | Objectifs:1,1,1,0,1 | Disponibilite:Matin | Jours:1,1,1,1,1

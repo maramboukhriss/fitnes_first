@@ -1,0 +1,20 @@
+=== RAPPORT STATISTIQUES - FITNESS CLUB ===
+
+Date de génération : Dec 14 2025
+
+📊 STATISTIQUES DÉMOGRAPHIQUES
+--------------------------------
+Total membres : 6
+Hommes : 0 (0,0%)
+Femmes : 6 (100,0%)
+Âge moyen : 338,3 ans
+Âge minimum : 21 ans
+Âge maximum : 1925 ans
+
+📈 RÉPARTITION PAR ÂGE
+----------------------
+Moins de 20 ans : 0 (0,0%)
+20-29 ans : 5 (83,3%)
+30-39 ans : 0 (0,0%)
+40-49 ans : 0 (0,0%)
+50 ans et plus : 1 (16,7%)

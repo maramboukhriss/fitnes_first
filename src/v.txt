@@ -1,0 +1,154 @@
+void
+on_valider_clicked                     (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+    GtkWidget *window = gtk_widget_get_toplevel(objet_graphique);
+    // Récupérer les champs d'authentification
+    GtkWidget *entry_id = lookup_widget(window, "entry21");
+    GtkWidget *entry_mdp = lookup_widget(window, "entry20");
+    GtkWidget *label_message = lookup_widget(window, "label55");
+
+    
+    if (!entry_id || !entry_mdp || !label_message) {
+        printf("Erreur: widgets non trouvés dans l'authentification\n");
+        return;
+    }
+    
+    // Récupérer les valeurs
+    const char *id = gtk_entry_get_text(GTK_ENTRY(entry_id));
+    const char *mdp = gtk_entry_get_text(GTK_ENTRY(entry_mdp));
+    
+    // Validation
+    if (strlen(id) == 0 || strlen(mdp) == 0) {
+        gtk_label_set_text(GTK_LABEL(label_message), "Veuillez remplir tous les champs");
+        return;
+    }
+    
+    // Vérifier si c'est un admin
+    if (verifier_admin(id, mdp)) {
+        strcpy(utilisateur_connecte_id, id);
+        strcpy(utilisateur_type, "admin");
+        
+        printf("Connexion réussie en tant qu'admin: %s\n", id);
+        GtkWidget *window = gtk_widget_get_toplevel(objet_graphique);
+        // Fermer la fenêtre d'authentification
+        gtk_widget_destroy(window);
+        
+        // Ouvrir l'interface admin
+        GtkWidget *acceuiladmin = create_acceuiladmin();
+        gtk_widget_show_all(acceuiladmin);
+        
+        return;
+    }
+    
+    // Vérifier si c'est un membre
+    if (verifier_membre(id, mdp)) {
+        strcpy(utilisateur_connecte_id, id);
+        strcpy(utilisateur_type, "membre");
+        
+        printf("Connexion réussie en tant que membre: %s\n", id);
+        GtkWidget *window = gtk_widget_get_toplevel(objet_graphique);
+        // Fermer la fenêtre d'authentification
+        gtk_widget_destroy(window);
+        
+        // Ouvrir l'interface membre
+        GtkWidget *acceuilmembre = create_acceuilmembre();
+        gtk_widget_show_all(acceuilmembre);
+        
+        return;
+    }
+    
+    // Si on arrive ici, les identifiants sont incorrects
+    gtk_label_set_text(GTK_LABEL(label_message), "ID ou mot de passe incorrect");
+    
+    // Vider le champ mot de passe et remettre le focus sur ID
+    gtk_entry_set_text(GTK_ENTRY(entry_mdp), "");
+    gtk_widget_grab_focus(entry_id);
+}
+void
+on_valider_clicked                     (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+
+    GtkWidget *window = gtk_widget_get_toplevel(objet_graphique);
+    // Récupérer les champs d'authentification
+    GtkWidget *entry_id = lookup_widget(window, "entry21");
+    GtkWidget *entry_mdp = lookup_widget(window, "entry20");
+    GtkWidget *label_message = lookup_widget(window, "label55");
+    GtkWidget *eye_button = lookup_widget(window, "eye_button_auth"); // Récupérer le bouton œil
+
+    if (!entry_id || !entry_mdp || !label_message) {
+        printf("Erreur: widgets non trouvés dans l'authentification\n");
+        return;
+    }
+    
+    // Récupérer les valeurs
+    const char *id = gtk_entry_get_text(GTK_ENTRY(entry_id));
+    const char *mdp = gtk_entry_get_text(GTK_ENTRY(entry_mdp));
+    
+    // Validation
+    if (strlen(id) == 0 || strlen(mdp) == 0) {
+        gtk_label_set_text(GTK_LABEL(label_message), "Veuillez remplir tous les champs");
+        return;
+    }
+    
+    // Vérifier si c'est un admin
+    if (verifier_admin(id, mdp)) {
+        strcpy(utilisateur_connecte_id, id);
+        strcpy(utilisateur_type, "admin");
+        
+        printf("Connexion réussie en tant qu'admin: %s\n", id);
+        
+        // Réinitialiser l'œil avant de fermer
+        oeil_auth_visible = 0;
+        
+        // Fermer la fenêtre d'authentification
+        gtk_widget_destroy(window);
+        
+        // Ouvrir l'interface admin
+        GtkWidget *acceuiladmin = create_acceuiladmin();
+        gtk_widget_show_all(acceuiladmin);
+        
+        return;
+    }
+    
+    // Vérifier si c'est un membre
+    if (verifier_membre(id, mdp)) {
+        strcpy(utilisateur_connecte_id, id);
+        strcpy(utilisateur_type, "membre");
+        
+        printf("Connexion réussie en tant que membre: %s\n", id);
+        
+        // Réinitialiser l'œil avant de fermer
+        oeil_auth_visible = 0;
+        
+        // Fermer la fenêtre d'authentification
+        gtk_widget_destroy(window);
+        
+        // Ouvrir l'interface membre
+        GtkWidget *acceuilmembre = create_acceuilmembre();
+        gtk_widget_show_all(acceuilmembre);
+        
+        return;
+    }
+    
+    // Si on arrive ici, les identifiants sont incorrects
+    gtk_label_set_text(GTK_LABEL(label_message), "ID ou mot de passe incorrect");
+    
+    // Vider le champ mot de passe et remettre le focus sur ID
+    gtk_entry_set_text(GTK_ENTRY(entry_mdp), "");
+    gtk_widget_grab_focus(entry_id);
+}
+
+// Fonctions utilitaires d'authentification
+const char* get_utilisateur_connecte_id(void) {
+    return utilisateur_connecte_id;
+}
+
+const char* get_utilisateur_type(void) {
+    return utilisateur_type;
+}
+
+int est_connecte(void) {
+    return strlen(utilisateur_connecte_id) > 0;
+}

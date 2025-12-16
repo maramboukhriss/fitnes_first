@@ -1,0 +1,15 @@
+=== CONFIRMATION D'INSCRIPTION ===
+
+Date: Dec 15 2025
+Heure: 11:38:51
+
+DESTINATAIRE:
+  othmen benromdhane
+  Email: l@gmail.com
+  Téléphone: 45678
+
+DÉTAILS DE L'INSCRIPTION:
+  ID Membre: 0
+  Statut: CONFIRMÉ
+
+En production, cet email serait envoyé à l'adresse ci-dessus.

@@ -1,0 +1,15 @@
+=== CONFIRMATION D'INSCRIPTION ===
+
+Date: Dec 12 2025
+Heure: 12:31:37
+
+DESTINATAIRE:
+  hj hjk
+  Email: mboukhriss34@gmail.com
+  Téléphone: 5678
+
+DÉTAILS DE L'INSCRIPTION:
+  ID Membre: 6
+  Statut: CONFIRMÉ
+
+En production, cet email serait envoyé à l'adresse ci-dessus.
