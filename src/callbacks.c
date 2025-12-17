@@ -2456,3 +2456,167 @@ void on_export_histogramme_clicked(GtkWidget *button, gpointer user_data) {
     cairo_destroy(cr);
     cairo_surface_destroy(surface);
 }
+
+
+
+
+void
+on_button_afficher_tous_clicked        (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_buttonannuler1_clicked              (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_buttonAjouter_clicked               (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_buttonRechercherMod_clicked         (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_radioDisponible_mod_toggled         (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_buttonannuler2_clicked              (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_buttonModifier_clicked              (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_on_button_recherche_clicked_clicked (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_afficher_liste_clicked              (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_retour_acceuil_clicked              (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_button_rech_equip_dis_clicked       (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_button_refresh_reserver_clicked     (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_button_rech_reserver_clicked        (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_radiobutton_reserver1_toggled       (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_radiobutton_reserver2_toggled       (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_radiobutton_reserver3_toggled       (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_button_reserver_clicked             (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_button_mes_reservation_clicked      (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_retour_acceuil_reservation_clicked  (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_button_refresh_mes_reservation_clicked
+                                        (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
